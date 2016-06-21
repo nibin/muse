@@ -1,0 +1,14 @@
+Rule Engine DSL
+---------------
+
+declare Customer
+	field: type
+	field: type
+end
+
+rule "rule description"
+	if 
+		condition
+	then
+		action
+end

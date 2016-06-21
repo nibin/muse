@@ -1,0 +1,45 @@
+description = "Project Muse"
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'groovy'
+
+sourceSets {
+	main {
+		java { srcDirs = ['src/main/java']}
+		groovy { srcDirs = ['src/main/java']}
+	}
+
+	test {
+		java { srcDirs = ['src/test/java']}
+		groovy { srcDirs = ['src/test/java']}
+	}
+}
+
+compileGroovy {
+	sourceCompatibility '1.8'
+	targetCompatibility '1.8'
+}
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+version = '1.0'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'org.slf4j:slf4j-api:1.7.12'
+    compile 'org.codehaus.groovy:groovy-all:2.4.5'
+	compile 'org.codehaus.gpars:gpars:1.2.1'
+
+    testCompile 'org.testng:testng:6.8.1'
+}
+
+test.useTestNG()
+
+compileJava.enabled = false
+compileGroovy.enabled = true
+compileTestGroovy.enabled = true
